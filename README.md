@@ -1,3 +1,31 @@
+<h1 align="center">Cats Wiki</h1>
+
+<div align="center">
+   Solution for a challenge from  <a href="http://devchallenges.io" target="_blank">Devchallenges.io</a>.
+</div>
+
+<div align="center">
+  <h3>
+    <a href="https://cats-wiki-nine.vercel.app/">
+      Demo
+    </a>
+    <span> | </span>
+    <a href="https://devchallenges.io/solutions/TPcIaku9wchToA78gsZA">
+      Solution
+    </a>
+    <span> | </span>
+    <a href="https://devchallenges.io/challenges/f4NJ53rcfgrP6sBMD2jt">
+      Challenge
+    </a>
+  </h3>
+</div>
+
+## Contact
+
+- GitHub [alQaisi](https://github.com/alqaisi)
+- Twitter [alQaisi77](https://twitter.com/alQaisi77)
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
