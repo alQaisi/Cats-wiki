@@ -87,7 +87,7 @@ function CatPage({data}) {
             </div>
         </div>
         <AnimatePresence>
-            { userSelectedImage!==null && <Lightbox images={data.map(({url})=>url)} name={name} close={()=>setUserSelectedImage(null)}/> }
+            { userSelectedImage!==null && <Lightbox images={data.map(({url})=>url)} name={name} userCurrentImage={userSelectedImage} close={()=>setUserSelectedImage(null)}/> }
         </AnimatePresence>
         </>
     );
