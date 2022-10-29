@@ -1,0 +1,121 @@
+@use "../../styles/variables.scss";
+
+.input{
+    border:none;
+    outline: none;
+    border-radius: variables.$input-border-radius;
+    padding: 24px 50px 24px 28px;
+    font-size: 1rem;
+    color: variables.$dark-text-color;
+    width: 100%;
+    
+}
+.inputContainer{
+    width: 100%;
+    position: relative;
+    @media screen and (max-width:775px) {
+        & .input{
+            padding: 12px 35px 12px 10px;
+        }
+        & .icon{
+            font-size: 1.45rem;
+            right:15px;
+        }
+        & + .searchData{
+            top:75px;
+        }
+    }
+}
+.icon{
+    position: absolute;
+    right:28px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: variables.$dark-text-color;
+    background-color: white;
+    font-size: 2rem;
+}
+.closeIcon{
+    display: none;
+    position: absolute;
+    top: -15px;
+    right:25px;
+    font-size: 2rem;
+    color: variables.$dark-text-color;
+    width:unset !important;
+}
+.container{
+    position: relative;
+    @media screen and (max-width:575px){
+        & .searchData{
+            display:none;
+        }
+    }
+    &.modal{
+        @media screen and (max-width:575px) {
+            & .closeIcon{
+                display: initial;
+                cursor: pointer;
+                :hover{
+                    opacity: .7;
+                }
+            }
+            position: fixed;
+            background-color: white;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            padding-top: 25px;
+            max-width: unset !important;
+            display: flex;
+            flex-direction: column;
+            justify-content:flex-start;
+            & > *{
+                max-width: 300px;
+                width: 90%;
+                margin: 25px auto;
+            }
+            & .searchData{
+                display: initial;
+                height: fit-content;
+                text-align: center;
+                top: 0;
+                margin-top:0px;
+                position: relative;
+            }
+            & .input{
+                border: 1px solid variables.$dark-text-color;
+            }
+        }
+    }
+}
+.searchData{
+    z-index: 2;
+    width: 100%;
+    height: 220px;
+    position: absolute;
+    background-color: white;
+    border-radius: 24px;
+    padding:10px 20px 15px;
+    top:105px;
+    overflow-x: hidden;
+    overflow-y:scroll;
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    & p{
+        margin-block:0px;
+        border-radius: 12px;
+        cursor: pointer;
+        padding:15px 10px;
+        &:hover{
+            background: rgba(151, 151, 151, 0.2);
+        }
+    }
+}
