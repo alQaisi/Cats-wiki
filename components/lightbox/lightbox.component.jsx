@@ -5,7 +5,6 @@ import { MdOutlineNavigateNext,MdOutlineNavigateBefore, MdClose } from "react-ic
 import { motion, AnimatePresence } from "framer-motion"
 
 function Lightbox({images,name,userCurrentImage,close}) {
-    console.log(userCurrentImage);
     const [currentImage,setCurrentImage]=useState(userCurrentImage);
     function handleChangeImage(newIndex){
         if(images[currentImage+newIndex]){
@@ -18,7 +17,7 @@ function Lightbox({images,name,userCurrentImage,close}) {
             <motion.div className={styles.imageWrapper}>
                 <div className={styles.wrapperElem}/>
                 <AnimatePresence>
-                    { userCurrentImage && <motion.span key={currentImage} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ ease: "easeInOut", duration: .4 }}  >{Images[currentImage] }</motion.span> }
+                    <motion.span key={currentImage} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ ease: "easeInOut", duration: .4 }}  >{Images[currentImage] }</motion.span>
                 </AnimatePresence>
                 <MdOutlineNavigateBefore onClick={()=>handleChangeImage(-1)} className={styles.icon}/>
                 <MdOutlineNavigateNext className={styles.icon} onClick={()=>handleChangeImage(1)}/>
