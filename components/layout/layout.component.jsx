@@ -7,7 +7,6 @@ function Layout({children}) {
     const router =useRouter();
     function goBack(evt){
         evt.preventDefault();
-        console.log(router.pathname);
         if(router.pathname.includes("error"))
             return router.push("/");
         router.back();
