@@ -1,0 +1,183 @@
+@use "./variables.scss";
+
+.homeComponent{
+    border-radius: variables.$containers-border-radius;
+    overflow:hidden;
+    margin-bottom:150px;
+}
+.hero{
+    width: 100%;
+    height:675px;
+    background-color: variables.$hero-footer-color;
+    background-image: url("/HeroImagelg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+    padding: 25px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .heroText{
+        font-size: 1.34rem;
+        line-height: 1.85rem;
+        margin: 12px 0 50px;
+    }
+    & > *{
+        max-width:400px;
+    }
+    @media screen and (max-width:1400px) {
+        padding: 25px 50px;
+        background-image: url("/HeroImagemd.png");
+        height: 500px;
+        & > *{
+            max-width:300px;
+        }
+    }
+    @media screen and (max-width:1075px) {
+        padding: 25px 50px;
+        background-image: url("/HeroImagemd.png");
+        background-position: left ;
+        height: 400px;
+        & > *{
+            max-width:300px;
+        }
+    }
+    @media screen and (max-width:775px) {
+        background-position: center top;
+        height:300px;
+        padding: 25px 0px 50px 25px;
+        align-items: flex-start;
+        & img{
+            width:40%;
+            height: auto;
+        }
+        & > *{
+            max-width:50%;
+        }
+        .heroText{
+            font-size: 1.15rem;
+            margin: 12px 0 25px;
+        }
+        
+    }
+    @media screen and (max-width:480px) {
+        height: 250px;
+    }
+}
+.breifs{
+    padding:50px 100px;
+    background-color: variables.$light-elements-backgrounds;
+    .title{
+        display: flex;
+        align-items: flex-end;
+        margin-block: 36px 46px;
+        justify-content: space-between;
+        & h1{
+            max-width: 530px;
+            margin-block: 0;
+        }
+    }
+    .cards{
+        display: flex;
+        justify-content:center;
+        gap:25px 50px;
+        flex-wrap: wrap;
+        max-width: 1250px;
+        margin:60px auto 50px;
+    }
+    @media screen and (max-width:1075px) {
+        & .title{
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 25px;
+        }
+        .cards{
+            gap:25px 50px;
+            flex-wrap: wrap;
+            margin:70px auto 20px;
+        }
+        padding:50px 30px;
+    }
+    @media screen and (max-width:600px) {
+        .cards{
+            gap: 25px 25px;
+        }
+        padding:50px 30px 25px;
+    }
+}
+.facts{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 1440px;
+    margin: 25px auto 100px;
+    & .textContainer{
+        max-width:475px;
+    }
+    & .nestedImages{
+        position: relative;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-end;
+        gap: 28px;
+    }
+    & .imagesContainer{
+        position: relative;
+        display: flex;
+        gap: 28px;
+        width: 50%;
+    }
+    @media screen and (max-width:1250px) {
+        justify-content: space-between;
+        & .imagesContainer{
+            & .nestedImages{
+                width:60%;
+            }
+            & .img1{
+                min-width: 122.95px !important;
+                width: 60%;
+                height: auto !important;
+            }
+            & .img2{
+                width: 100%;
+                height: auto;
+                min-width: 172.03px !important;
+            }
+            & .img3{
+                flex-grow: 1;
+                height: fit-content;
+                min-width: 149.98px !important;
+            }
+        }
+    }
+    @media screen and (max-width:1075px) {
+        flex-direction: column;
+        margin: -75px auto 100px;
+        gap: 50px;
+        & .imagesContainer{
+            justify-content: center;
+        }
+    }
+    @media screen and (max-width:485px) {
+        margin: -115px auto 75px;
+        & .imagesContainer{
+            gap: 14px;
+            justify-content: flex-start;
+            margin-right: 25px;
+        }
+        & .nestedImages{
+            gap: 14px;
+        }
+        & .img1{
+            width: 100px !important;
+        }
+        & .img2{
+            width: 130.03px !important;
+        }
+        & .img3{
+            flex-grow: 1;
+            height: auto;
+            min-width: 100.98px !important;
+        }
+    }
+}

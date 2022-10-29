@@ -1,0 +1,124 @@
+@use "./variables.scss";
+.container{
+    margin: 50px 25px 75px;
+    & img{
+        transition: all .25s ease-in-out;
+        &:hover{
+            cursor: pointer;
+            filter:brightness(.55);
+        }
+    }
+}
+.dataContainer{
+    display: flex;
+    align-items: flex-start;
+    justify-content:center;
+    gap: 115px;
+    @media screen and (max-width:1275px) {
+       flex-direction: column;
+       gap: 0px;
+       & .infoContainer{
+           max-width: unset;
+       }
+    }
+    @media screen and (max-width:535px) {
+        & .imageWrapper{
+            width: 95%;
+            min-width: unset !important;
+        }
+     }
+}
+.infoContainer{
+    max-width: 600px;
+    & h3+p{
+        margin-block: 25px 32px !important;
+    }
+    & p{
+        margin-block: 32px;
+    }
+}
+.imageWrapper{
+    display: block;
+    min-width: 375px;
+    max-width: 375px;
+    position: relative;
+    & > img{
+        border-radius: variables.$images-border-radius;
+    }
+    & .imageWrapperElem{
+        padding-top: 100%;
+        
+    }
+    &::before{
+        content: "";
+        z-index: -1;
+        position: absolute;
+        width: 65px;
+        height:80%;
+        border-radius: 14px;
+        background-color: variables.$shapes-color;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -15px;
+    }
+}
+.ratingContainer{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    & span:first-of-type{
+        margin-right: auto;
+        line-height: 1.75rem;
+    }
+    max-width:580px;
+    @media screen and (max-width:630px) {
+        flex-direction: column;
+        margin-block: 10px !important;
+        & .ratingWrapper{
+            margin:15px;            
+        }
+        & span:first-of-type{
+            margin-right:0;
+            line-height: 1.5rem;
+        }
+        & .rating{
+            width:30px;
+            height:9px;
+        }
+    }
+}
+.rating{
+    display: inline-block;
+    width:60px;
+    height: 12px;
+    margin: 8px;
+    border-radius: 8px;
+    background-color: variables.$cats-features-unactive;
+    &.active{
+        background-color:variables.$cats-features-active;
+    }
+}
+.imagesContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 45px;
+    justify-content: center;
+    & img{
+        border-radius: variables.$images-border-radius;
+        object-fit: cover;
+    }
+    @media screen and (max-width:725px) {
+        gap: 30px;
+        & img{
+            width:200px !important;
+            height:200px !important;
+        }
+    }
+    @media screen and (max-width:535px) {
+        gap: 25px;
+        & img{
+            width:130px !important;
+            height:130px !important;
+        }
+    }
+}
