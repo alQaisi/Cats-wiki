@@ -9,7 +9,7 @@
     width: 100%;
     height:675px;
     background-color: variables.$hero-footer-color;
-    // background-image: url("/HeroImagemd.png");
+    background-image: url("/HeroImagelg.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: right;
@@ -25,23 +25,17 @@
     & > *{
         max-width:400px;
     }
-   
-    @media screen and (min-width:1075px) {
-        background-image: url("/HeroImagemd.png");
-    }
-    @media screen and (min-width:2560px) {
-        background-image: url("/HeroImagelg.png");
-    }
-    @media screen and (max-width:1920px) {
+    @media screen and (max-width:1400px) {
         padding: 25px 50px;
+        background-image: url("/HeroImagemd.png");
         height: 500px;
         & > *{
             max-width:300px;
         }
     }
     @media screen and (max-width:1075px) {
-        background-image: url("/HeroImagesm.png") !important;
         padding: 25px 50px;
+        background-image: url("/HeroImagesm.png");
         background-position: left ;
         height: 400px;
         & > *{
