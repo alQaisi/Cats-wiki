@@ -1,6 +1,6 @@
 import CatCard from "../../components/cat-card/cat-card.component.jsx";
 import styles from "../../styles/cats.module.scss";
-import { Head } from "next/document.js";
+import Head from 'next/head';
 import { Children } from "react";
 
 export async function getStaticProps(){
