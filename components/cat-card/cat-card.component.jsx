@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 function CatCard({img,width,height,name,isMain,href}) {
-    
     const card=(
         <span>
             <div className={styles.card+" "+(isMain?styles.main:"")+" "+(href?styles.link:"")}>
