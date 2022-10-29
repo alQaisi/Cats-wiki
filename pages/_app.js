@@ -17,8 +17,8 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <AnimatePresence initial={true} onExitComplete={()=> window.scrollTo(0,0)}>
-        <motion.main key={router.pathname==="/"?"home":router.pathname} variants={variants} initial="hidden" animate="enter" exit="exit" transition={{type:"linear"}}>
+      <AnimatePresence mode='wait' initial={true} onExitComplete={()=> window.scrollTo(0,0)}>
+        <motion.main key={router.pathname==="/"?"home":router.pathname} variants={variants} initial="hidden" animate="enter" exit="exit" >
           <Component {...pageProps} />
         </motion.main>
       </AnimatePresence>
