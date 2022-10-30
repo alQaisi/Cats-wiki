@@ -22,7 +22,7 @@ export async function getStaticProps(){
 }
 
 export default function Home({cats}) {
-  const catsCards=Children.toArray(cats.slice(0,4).map(({image,id,name},index)=><CatCard isMain={index===0} img={image.url} name={name} width="220" height="220" href={id} />))
+  const catsCards=cats && Children.toArray(cats.slice(0,4).map(({image,id,name},index)=><CatCard isMain={index===0} img={image.url} name={name} width="220" height="220" href={id} />))
   return (
     <div className={styles.container}>
       <Head>
@@ -33,7 +33,7 @@ export default function Home({cats}) {
         <div className={styles.hero}>
           <Image src={"/CatwikilLogoWhite.svg"} width={250} height={87} alt="Cat wiki logo"/>
           <p className={styles.heroText+" white medium"}>Get to know more about your cat bread</p>
-          <SearchBox data={cats}/>
+          <SearchBox data={cats || []}/>
         </div>
         <div className={styles.breifs}>
           <p className='regular text after'>Most Searched Breeds</p>

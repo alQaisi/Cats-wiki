@@ -5,16 +5,22 @@ import { Children, useEffect,useState } from "react";
 import { useRouter } from "next/router";
 import Loader from "../../components/Loader/Loader.component";
 import Lightbox from "../../components/lightbox/lightbox.component";
-import { motion, AnimatePresence } from "framer-motion"
+import { AnimatePresence } from "framer-motion";
 
 export async function getStaticPaths(){
+    let data=[];
+    let paths=[];
     const api_key = process.env.CAT_API_KEY;
-    const respones=await fetch(`https://api.thecatapi.com/v1/breeds?api_key=${api_key}`);
-    const data=await respones.json();
-    const paths=data.map(({id})=>({params:{breed_id:id}}));
-    return{
-        paths,
-        fallback:true
+    try{
+        const response=await fetch(`https://api.thecatapi.com/v1/breeds?api_key=${api_key}`);
+        data=await response.json();
+        paths=data.map(({id})=>({params:{breed_id:id}}));
+    }catch(err){
+    }finally{
+        return{
+            paths,
+            fallback:true
+        }
     }
 }
 
