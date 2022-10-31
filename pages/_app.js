@@ -1,8 +1,8 @@
 import Layout from '../components/layout/layout.component';
+import Head from 'next/head';
 import '../styles/globals.scss';
 import { AnimatePresence,motion } from "framer-motion"
 import { useRouter } from 'next/router';
-import { useEffect } from "react";
 
 const variants = {
   hidden: { opacity: 0, x: -200, y: 0 },
@@ -12,9 +12,6 @@ const variants = {
 
 function MyApp({ Component, pageProps }) {
   const router =useRouter();
-  useEffect(()=>{
-    document.documentElement.style.visibility = 'visible';
-  },[]);
   return(
     <Layout>
       <AnimatePresence mode='wait' initial={true} onExitComplete={()=> window.scrollTo(0,0)}>

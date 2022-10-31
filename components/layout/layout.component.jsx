@@ -3,9 +3,13 @@ import Image from "next/image";
 import {useRouter} from 'next/router';
 import Link from "next/link";
 import NextNProgress from 'nextjs-progressbar';
-
+import { useState,useEffect } from "react";
 
 function Layout({children}) {
+    const [mounted, setMounted] = useState(false);
+    useEffect(()=>{
+        setMounted(true);
+    },[]);
     const router =useRouter();
     function goBack(evt){
         evt.preventDefault();
@@ -16,7 +20,7 @@ function Layout({children}) {
     return (
         <>
         <NextNProgress color="#5f5101" />
-        <div className={styles.container}>
+        <div className={styles.container+" "+(!mounted?styles.hidden:"")}>
             <div className={styles.header}>
                 <Link href={"/"}><Image src="/CatwikiLogo.svg" width="128" height="43" alt="cat wiki logo"/></Link>
                 { router.pathname!=="/" && <Link scroll={false} onClick={goBack} className={styles.back+" semibold"} href={"/"}>Go back</Link>}
