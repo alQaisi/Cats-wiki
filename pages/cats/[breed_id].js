@@ -38,7 +38,7 @@ export async function getStaticProps({params:{breed_id}}){
 }
 
 function CatPage({data}) {
-
+    console.log(data);
     const [userSelectedImage,setUserSelectedImage]=useState(null);
 
     const { isFallback, push } = useRouter();
