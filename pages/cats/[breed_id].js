@@ -32,9 +32,12 @@ export async function getStaticProps({params:{breed_id}}){
         data=await res.json();
     }catch(err){
     }
-    return {props:{
-        data:data,
-    }}
+    return {
+        props:{
+            data:data,
+        },
+        revalidate:10,
+    }
 }
 
 function CatPage({data}) {

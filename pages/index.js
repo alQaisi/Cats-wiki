@@ -16,9 +16,12 @@ export async function getStaticProps(){
   }
   catch(err){
   }
-  return {props:{
-    cats:data
-  }}
+  return {
+    props:{
+      cats:data
+    },
+    revalidate:10,
+  }
 }
 
 export default function Home({cats}) {

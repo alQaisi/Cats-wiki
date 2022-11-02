@@ -11,9 +11,12 @@ export async function getStaticProps(){
         data=await response.json();
     }catch(err){
     }finally{
-        return {props:{
-            cats:data
-        }}
+        return {
+            props:{
+                cats:data
+            },
+            revalidate:10,
+        }
     }
 }
 
