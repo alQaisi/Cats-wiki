@@ -1,0 +1,47 @@
+@use "../../../styles/variables.scss";
+.card{
+    z-index: 2 !important;
+    & > img{
+        object-fit: cover;
+        cursor: pointer;
+        transition: all .35s ease-in-out;
+        &:hover{
+            filter: brightness(65%);
+        }
+    }
+    position: relative;
+    &.main::before{
+        content: "";
+        z-index: -1;
+        position: absolute;
+        width: 65px;
+        height:80%;
+        border-radius: 14px;
+        background-color: variables.$shapes-color;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -15px;
+    }
+    @media screen and (max-width:600px) {
+        & > img{
+            width:170px;
+            height:170px;
+        }
+    }
+    @media screen and (max-width:470px) {
+        & > img{
+            width:125px;
+            height:125px;
+        }
+    }
+}
+.link{
+    &:hover{
+        cursor: pointer;
+        opacity: .75;
+    }
+}
+.cat{
+    z-index: 2;
+    border-radius: variables.$images-border-radius;
+}

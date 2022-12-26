@@ -1,0 +1,7 @@
+@use "./variables.scss";
+
+.homeComponent{
+    border-radius: variables.$containers-border-radius;
+    overflow:hidden;
+    margin-bottom:150px;
+}
