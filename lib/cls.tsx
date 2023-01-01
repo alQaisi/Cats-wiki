@@ -9,5 +9,5 @@ export function cls(...classes:CLS_PROPS):string{
         if(class_name[key])
             return classNames.push(key);
     });
-    return classNames.join("");
+    return classNames.join(" ");
 }

@@ -1,0 +1,61 @@
+@use "../../../styles/variables.scss";
+
+.hero{
+    width: 100%;
+    height:675px;
+    background-color: variables.$hero-footer-color;
+    background-image: url("/HeroImagelg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+    padding: 25px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .heroText{
+        font-size: 1.34rem;
+        line-height: 1.85rem;
+        margin: 12px 0 50px;
+    }
+    & > *{
+        max-width:400px;
+    }
+    @media screen and (max-width:1400px) {
+        padding: 25px 50px;
+        background-image: url("/HeroImagemd.png");
+        height: 500px;
+        & > *{
+            max-width:300px;
+        }
+    }
+    @media screen and (max-width:1075px) {
+        padding: 25px 50px;
+        background-image: url("/HeroImagesm.png");
+        background-position: left ;
+        height: 400px;
+        & > *{
+            max-width:300px;
+        }
+    }
+    @media screen and (max-width:775px) {
+        background-position: center top;
+        height:300px;
+        padding: 25px 0px 50px 25px;
+        align-items: flex-start;
+        & img{
+            width:40%;
+            height: auto;
+        }
+        & > *{
+            max-width:50%;
+        }
+        .heroText{
+            font-size: 1.15rem;
+            margin: 12px 0 25px;
+        }
+        
+    }
+    @media screen and (max-width:480px) {
+        height: 250px;
+    }
+}

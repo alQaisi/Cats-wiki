@@ -1,0 +1,43 @@
+@use "../../../styles/variables.scss";
+
+.breifs{
+    padding:50px 100px;
+    background-color: variables.$light-elements-backgrounds;
+    .title{
+        display: flex;
+        align-items: flex-end;
+        margin-block: 36px 46px;
+        justify-content: space-between;
+        & h1{
+            max-width: 530px;
+            margin-block: 0;
+        }
+    }
+    .cards{
+        display: flex;
+        justify-content:center;
+        gap:25px 50px;
+        flex-wrap: wrap;
+        max-width: 1250px;
+        margin:60px auto 50px;
+    }
+    @media screen and (max-width:1075px) {
+        & .title{
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 25px;
+        }
+        .cards{
+            gap:25px 50px;
+            flex-wrap: wrap;
+            margin:70px auto 20px;
+        }
+        padding:50px 30px;
+    }
+    @media screen and (max-width:600px) {
+        .cards{
+            gap: 25px 25px;
+        }
+        padding:50px 30px 25px;
+    }
+}

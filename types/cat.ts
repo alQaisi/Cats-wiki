@@ -11,5 +11,11 @@ export type CAT={
     social_needs:number,
     stranger_friendly:number,
     life_span:`${number} - ${number}`,
-    country_code:string
+    country_code:string,
+    image:{
+        id:string,
+        width:number,
+        height:number,
+        url:string
+    }
 }

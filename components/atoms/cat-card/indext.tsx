@@ -11,6 +11,7 @@ const CatCard:React.FC<CAT_CARDS_PROPS>=({img,width,height,isMain,name,href})=>{
             <div className={cls(styles.card,{[styles.main]:isMain},{[styles.link]:!!href})}>
                 <Image className={cls(styles.cat)} src={img} width={width} height={height} alt={name}/>
             </div>
+             <p className={styles.name +" text semibold "+styles.link}>{name}</p>
         </span>
     );
     
