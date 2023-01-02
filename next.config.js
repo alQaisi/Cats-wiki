@@ -5,6 +5,9 @@ const nextConfig = {
   env:{
     CAT_API_KEY:process.env.CAT_API_KEY
   },
+  experimental: {
+    scrollRestoration: true,
+  },
   images:{
     domains:["cdn2.thecatapi.com"]
   }
