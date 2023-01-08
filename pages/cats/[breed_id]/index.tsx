@@ -5,11 +5,13 @@ import { Children, Fragment, useEffect,useState } from "react";
 import { useRouter } from "next/router";
 import Loader from "../../../components/atoms/Loader";
 import Lightbox from "../../../components/organisms/lightbox";
+import Rating from "../../../components/atoms/rating-element";
 import { AnimatePresence } from "framer-motion";
 import { GetStaticPaths,GetStaticProps,NextPage } from "next";
 import { ParsedUrlQuery } from "querystring";
 import { CAT } from "../../../types/cat";
 import { BREED } from "../../../types/breed"; 
+import { cls } from "../../../lib/cls";
 
 interface Params extends ParsedUrlQuery{
     breed_id:string
@@ -71,16 +73,9 @@ const CatPage:NextPage<{data:BREED}>=({data})=>{
     
     const images= Children.toArray(data.map(({url},index)=><Image onClick={()=>setUserSelectedImage(index)} src={url} width={278} height={278} alt={name}/>));
 
-    const catsInfo= Children.toArray([["Adaptability",adaptability],["Affection level",affection_level],["Child Friendly",child_friendly],["Grooming",grooming],["Intelligence",intelligence],["Social needs",social_needs],["Stranger friendly",stranger_friendly]]
-        .map(item=>(
-            <p className={"text medium "+styles.ratingContainer}>
-                <span className="bold">{item[0]}:</span>
-                <span className={styles.ratingWrapper}>
-                    { Children.toArray((new Array(5).fill(0)).map((elem,index)=><span className={styles.rating+" "+(item[1]>=index+1?styles.active:"") }></span>)) }
-                </span>
-            </p>
-        )));
-
+    const catsData:[string,number][]=[["Adaptability",adaptability],["Affection level",affection_level],["Child Friendly",child_friendly],["Grooming",grooming],["Intelligence",intelligence],["Social needs",social_needs],["Stranger friendly",stranger_friendly]];
+    const catsInfo= Children.toArray(catsData.map(item=><Rating rating={item}/>));
+    
     return(
         <Fragment>
             <Head>
